@@ -28,7 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Navbar></Navbar>
         <Categories></Categories>
         <MarqueeComponent></MarqueeComponent>
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen bg-[#E1E8E180]">{children}</main>
         <Footer></Footer>
       </body>
     </html>

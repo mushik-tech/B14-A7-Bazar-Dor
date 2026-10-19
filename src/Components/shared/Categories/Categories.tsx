@@ -13,11 +13,9 @@ const getCategories = async () => {
 const Categories = async () => {
   const categories: ICategory[] = await getCategories();
 
-  console.log(categories);
-
   return (
     <div className="py-4 px-6">
-      <div className="max-w-6xl mx-auto flex flex-wrap gap-3">
+      <div className="max-w-6xl mx-auto flex flex-wrap gap-3 lg:gap-9">
         {categories.map((cat) => (
           <NavLinks href={cat.slug} key={cat.id}>
             {cat.icon} {cat.nameBn}
