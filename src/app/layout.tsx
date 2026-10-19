@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/Components/shared/Navbar";
 import Footer from "@/Components/shared/Footer";
 import MarqueeComponent from "@/Components/shared/MarqueeComponent/MarqueeComponent";
+import Categories from "@/Components/shared/Categories/Categories";
 
 const hindSiliguri = Hind_Siliguri({
   variable: "--font-hind-siliguri",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <Navbar></Navbar>
+        <Categories></Categories>
         <MarqueeComponent></MarqueeComponent>
         <main className="min-h-screen">{children}</main>
         <Footer></Footer>

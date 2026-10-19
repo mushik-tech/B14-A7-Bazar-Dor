@@ -25,10 +25,9 @@ const MarqueeComponent = async () => {
     };
   });
 
-  console.log(itemData);
 
   return (
-    <div className="border-b border-separator">
+    <div className="border-b border-t border-separator">
       <Marquee speed={120}>
         {itemData.map((item) => (
           <MarqueeCard key={item.id} item={item}></MarqueeCard>
