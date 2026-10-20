@@ -25,8 +25,6 @@ export default async function Home() {
     .sort((a, b) => a.change.pct - b.change.pct)
     .slice(0, 6);
 
-  console.log(lowPriceProducts);
-
   return (
     <div className="max-w-6xl mx-auto mb-16">
       <Banner />

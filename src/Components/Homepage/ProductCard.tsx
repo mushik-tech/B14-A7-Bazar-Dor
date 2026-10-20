@@ -21,8 +21,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
                 {product.unit === "kg"
                   ? "কেজি"
                   : product.unit === "litre"
-                    ? "লিটার"
-                    : "ডজন"}
+                    ? "লিটার" : product.unit === "dozen"
+                    ? "ডজন" : "পিস"}
               </p>
             </div>
           </Card.Title>
@@ -47,7 +47,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
                   ? "▼"
                   : "—"}
             </p>
-            <p>{product.change.pct}%</p>
+            <p>{product.change.pct.toLocaleString('bn-BD')}%</p>
           </Chip>
         </Card.Footer>
       </Card>
