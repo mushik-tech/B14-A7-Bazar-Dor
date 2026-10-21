@@ -1,5 +1,6 @@
 import { IProduct } from "@/types/product.types";
-import { Card, Chip, Link } from "@heroui/react";
+import { Card, Chip } from "@heroui/react";
+import Link from "next/link";
 
 export interface ProductCardProps {
   product: IProduct;
@@ -7,12 +8,12 @@ export interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
-    <div>
+    <Link href={`/product/${product.id}`}>
       <Card className="rounded-xl border bg-[#FAFCFA]">
         <Card.Header>
           <Card.Title className="flex gap-3">
             <div className="p-3 bg-[#F0F5F0] rounded-xl">
-                <p className="text-2xl">{product.image}</p>
+              <p className="text-2xl">{product.image}</p>
             </div>
             <div>
               <p className="text-xl font-bold">{product.nameBn}</p>
@@ -21,8 +22,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
                 {product.unit === "kg"
                   ? "কেজি"
                   : product.unit === "litre"
-                    ? "লিটার" : product.unit === "dozen"
-                    ? "ডজন" : "পিস"}
+                    ? "লিটার"
+                    : product.unit === "dozen"
+                      ? "ডজন"
+                      : "পিস"}
               </p>
             </div>
           </Card.Title>
@@ -47,11 +50,11 @@ const ProductCard = ({ product }: ProductCardProps) => {
                   ? "▼"
                   : "—"}
             </p>
-            <p>{product.change.pct.toLocaleString('bn-BD')}%</p>
+            <p>{product.change.pct.toLocaleString("bn-BD")}%</p>
           </Chip>
         </Card.Footer>
       </Card>
-    </div>
+    </Link>
   );
 };
 

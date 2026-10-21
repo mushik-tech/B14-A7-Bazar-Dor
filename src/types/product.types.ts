@@ -1,8 +1,8 @@
 export interface IMarket {
   market: string;
   division: string;
-  min: string;
-  max: string;
+  min: number;
+  max: number;
 }
 
 export interface IProduct {
@@ -27,7 +27,7 @@ export interface IProduct {
 
 export interface IMarquee {
   id: number;
-  nameBn: string
+  nameBn: string;
   unit: string;
   image: string;
   price: number;
