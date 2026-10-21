@@ -13,8 +13,6 @@ const getAllProduct = async () => {
 export default async function Home() {
   const products: IProduct[] = await getAllProduct();
 
-  // console.log(products);
-
   const highPriceProducts = products
     .filter((product) => product.change.dir === "up")
     .sort((a, b) => b.change.pct - a.change.pct)

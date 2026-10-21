@@ -6,6 +6,7 @@ export interface IMarket {
 }
 
 export interface IProduct {
+  error?: string
   id: number;
   slug: string;
   nameBn: string;

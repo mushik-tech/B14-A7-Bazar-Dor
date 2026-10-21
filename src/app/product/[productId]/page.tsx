@@ -1,12 +1,18 @@
 import BreadCrumbSection from "@/Components/ProductDetails/BreadCrumbSection";
 import { IProduct } from "@/types/product.types";
 import { Card, Table } from "@heroui/react";
+import { notFound } from "next/navigation";
 import React from "react";
 
 const getProductDetails = async (id: number) => {
   const res = await fetch(
     `https://openapi.programming-hero.com/api/bazardor/products/${id}`,
   );
+
+  // if (!res.ok) {
+  //   throw new Error("Failed to fetch products");
+  // }
+
   const data = await res.json();
   return data;
 };
@@ -19,6 +25,10 @@ const ProductDetails = async ({
   const { productId } = await params;
 
   const product: IProduct = await getProductDetails(Number(productId));
+
+  if (!product || product.error) {
+    return notFound();
+  }
 
   const isIncrease = product.yesterday - product.today;
 
@@ -150,10 +160,7 @@ const ProductDetails = async ({
 
             <Table>
               <Table.ScrollContainer>
-                <Table.Content
-                  aria-label="Team members"
-                  className="min-w-150"
-                >
+                <Table.Content aria-label="Team members" className="min-w-150">
                   <Table.Header>
                     <Table.Column isRowHeader className={"text-[14px]"}>
                       বাজার
@@ -173,12 +180,10 @@ const ProductDetails = async ({
                         <Table.Cell>{market.market}</Table.Cell>
                         <Table.Cell>{market.division}</Table.Cell>
                         <Table.Cell>
-                          {market.min.toLocaleString("bn-BD")}{" "}
-                          <span>টাকা</span>
+                          {market.min.toLocaleString("bn-BD")} <span>টাকা</span>
                         </Table.Cell>
                         <Table.Cell>
-                          {market.max.toLocaleString("bn-BD")}{" "}
-                          <span>টাকা</span>
+                          {market.max.toLocaleString("bn-BD")} <span>টাকা</span>
                         </Table.Cell>
                         <Table.Cell className={"font-bold"}>
                           {((market.max + market.min) / 2).toLocaleString(

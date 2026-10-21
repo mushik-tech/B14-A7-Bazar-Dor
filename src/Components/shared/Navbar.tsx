@@ -1,6 +1,7 @@
 import { Button } from "@heroui/react";
 import React from "react";
 import Logo from "./Logo";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -11,14 +12,14 @@ const Navbar = () => {
             <Logo></Logo>
           </div>
           <ul className="flex items-center gap-4">
-            <li>
+            <Link href={'/signin'}>
               <Button variant="ghost" className="rounded-lg">
                 সাইন ইন
               </Button>
-            </li>
-            <li>
+            </Link>
+            <Link href={'/signup'}>
               <Button className="bg-[#05893E] rounded-lg" >সাইন আপ</Button>
-            </li>
+            </Link>
           </ul>
         </header>
       </nav>

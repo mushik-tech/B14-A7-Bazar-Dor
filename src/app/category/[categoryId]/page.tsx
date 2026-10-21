@@ -1,11 +1,17 @@
 import CategoryItemList from "@/Components/Category/CategoryItemList";
 import { IProduct } from "@/types/product.types";
 import { Card } from "@heroui/react";
+import { notFound } from "next/navigation";
 
 const getProductsByCategory = async (id: string) => {
   const res = await fetch(
     `https://openapi.programming-hero.com/api/bazardor/products?category=${id}`,
   );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch products");
+  }
+
   const data = await res.json();
   return data;
 };
@@ -18,6 +24,10 @@ const CategoryPage = async ({
   const { categoryId } = await params;
 
   const products: IProduct[] = await getProductsByCategory(categoryId);
+
+  if (!products || products.length === 0) {
+    return notFound();
+  }
 
   return (
     <div className="max-w-6xl mx-auto">
