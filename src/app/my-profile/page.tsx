@@ -1,6 +1,6 @@
 "use client";
 
-import { signOut, useSession } from "@/lib/auth-client";
+import { signOut, updateUser, useSession } from "@/lib/auth-client";
 import {
   Button,
   Card,
@@ -29,7 +29,29 @@ const MyProfile = () => {
 
     if (data) {
       toast.success("সফলভাবে সাইন আউট হয়েছে");
-      redirect('/')
+      redirect("/");
+    }
+  };
+
+  const handleUpdateProfile = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const userData = Object.fromEntries(formData.entries()) as Record<
+      string,
+      string
+    >;
+
+    const { data, error } = await updateUser({
+      name: userData.name
+    });
+
+    if (error) {
+      toast.danger(error.message);
+      return;
+    }
+
+    if (data) {
+      toast.success("প্রোফাইল আপডেট সফল হয়েছে");
     }
   };
 
@@ -73,9 +95,7 @@ const MyProfile = () => {
       <div className="rounded-2xl border bg-surface p-6">
         <h1 className="font-bold mb-8">তথ্য</h1>
         <Surface className="w-full">
-          <Form
-          //  onSubmit={onSubmit}
-          >
+          <Form onSubmit={handleUpdateProfile}>
             <Fieldset className="w-full">
               <Fieldset.Group>
                 <TextField

@@ -1,4 +1,5 @@
 "use client";
+import SocialLogin from "@/Components/Auth/SocialLogin";
 import { signUp } from "@/lib/auth-client";
 import {
   Button,
@@ -142,14 +143,7 @@ const SignUpPage = () => {
           </div>
 
           <div className="flex gap-2">
-            <Button className="w-full rounded-md" variant="outline">
-              <Icon icon="devicon:google" />
-              Google দিয়ে চালিয়ে যান
-            </Button>
-            <Button className="w-full rounded-md" variant="outline">
-              <Icon icon="mdi:github" />
-              GitHub দিয়ে চালিয়ে যান
-            </Button>
+            <SocialLogin></SocialLogin>
           </div>
 
           <p className="text-center mt-4 text-sm">

@@ -3,13 +3,30 @@ import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "@better-auth/mongo-adapter";
 
 const client = new MongoClient(`${process.env.MONGO_URI}`);
-const db = client.db('productDBUSER');
+const db = client.db("productDBUSER");
 
 export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
-    autoSignIn: false
+    autoSignIn: false,
   },
+  socialProviders: {
+    google: {
+      clientId: process.env.BETTER_AUTH_GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.BETTER_AUTH_GOOGLE_CLIENT_SECRET as string,
+    },
+    github: {
+      clientId: process.env.BETTER_AUTH_GITHUB_CLIENT_ID as string,
+      clientSecret: process.env.BETTER_AUTH_GITHUB_CLIENT_SECRET as string,
+    },
+  },
+
+  // account: {
+  //   accountLinking: {
+  //     enabled: true,
+  //     trustedProviders: ["google", "github"],
+  //   },
+  // },
   database: mongodbAdapter(db, {
     client,
   }),

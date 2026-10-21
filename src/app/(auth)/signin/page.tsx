@@ -1,4 +1,5 @@
 "use client";
+import SocialLogin from "@/Components/Auth/SocialLogin";
 import { signIn } from "@/lib/auth-client";
 import { Eye, FloppyDisk } from "@gravity-ui/icons";
 import {
@@ -35,7 +36,7 @@ const SignInPage = () => {
       callbackURL: "/",
     });
 
-        if (error) {
+    if (error) {
       toast.danger(error.message);
       return;
     }
@@ -99,14 +100,7 @@ const SignInPage = () => {
           </div>
 
           <div className="flex gap-2">
-            <Button className="w-full rounded-md" variant="outline">
-              <Icon icon="devicon:google" />
-              Google দিয়ে চালিয়ে যান
-            </Button>
-            <Button className="w-full rounded-md" variant="outline">
-              <Icon icon="mdi:github" />
-              GitHub দিয়ে চালিয়ে যান
-            </Button>
+            <SocialLogin></SocialLogin>
           </div>
 
           <p className="text-center mt-4 text-sm">
