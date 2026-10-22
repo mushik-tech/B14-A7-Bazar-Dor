@@ -30,7 +30,7 @@ const CategoryPage = async ({
   }
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto mb-32">
       <Card className="rounded-xl border bg-[#FAFCFA] mt-8">
         <Card.Header>
           <Card.Title className="flex gap-3">

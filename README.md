@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 বাজার দর (BazarDor)
 
-## Getting Started
+### বাংলাদেশের নিত্যপ্রয়োজনীয় পণ্যের বাজারদর এক নজরে
 
-First, run the development server:
+**বাজার দর** is a responsive web application that helps users explore daily prices of essential products in Bangladesh. It provides product-wise price summaries, market comparisons, and daily price-change indicators through a clean and user-friendly interface.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Key Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **📊 Daily Price Tracking:** Explore essential products with current prices and daily price-change indicators.
+- **📈 Price Change Highlights:** Quickly identify products with increased or decreased prices.
+- **🔍 Product Details:** View minimum, maximum, and average prices, along with market-wise price information.
+- **🗂️ Category-Based Browsing:** Browse products by category and sort them by price in ascending or descending order.
+- **🔐 Authentication:** Register and sign in using email/password or supported Google and GitHub social login providers.
+- **👤 Profile Management:** View and update your profile information.
+- **📱 Responsive Design:** Enjoy a consistent experience across mobile, tablet, and desktop devices.
+- **⚡ Loading States & Notifications:** Skeleton loaders and toast notifications improve the user experience.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Technology | Purpose |
+|---|---|
+| [Next.js](https://nextjs.org/) | React framework and App Router |
+| [TypeScript](https://www.typescriptlang.org/) | Type safety and maintainable code |
+| [Tailwind CSS](https://tailwindcss.com/) | Responsive styling |
+| [HeroUI](https://www.heroui.com/) | UI components |
+| [Better Auth](https://www.better-auth.com/) | Authentication and social login |
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Live Demo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Live Link:** YOUR_DEPLOYED_APP_URL
+- **GitHub Repository:** YOUR_GITHUB_REPOSITORY_URL
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**বাজার দর — প্রয়োজনীয় পণ্যের দাম এক নজরে।** 🛒
